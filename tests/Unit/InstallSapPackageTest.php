@@ -4,7 +4,7 @@ namespace Protendai\SapBusinessOne\Tests\Unit;
 
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\File;
-use Protendai\SapBusinessOne\Tests\TestCase;
+use PHPUnit\Framework\TestCase;
 
 class InstallSapPackageTest extends TestCase
 {

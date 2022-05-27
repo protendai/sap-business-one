@@ -13,22 +13,32 @@ class SapBusinessOneServiceProvider extends ServiceProvider
     //     return new SAPClient();
     // });
 
-    $this->mergeConfigFrom(
-      __DIR__.'/config/sap.php', 'sap'
-    );
+    // $this->mergeConfigFrom(
+    //   __DIR__.'/config/sap.php', 'sap'
+    // );
+
+    if (file_exists(config_path('sap.php'))) {
+        $this->mergeConfigFrom(config_path('sap.php'), 'sap');
+    } else {
+        $this->mergeConfigFrom(__DIR__ . '/../config/sap.php', 'sap');
+    }
   }
 
   public function boot()
   {
     if ($this->app->runningInConsole()) {
 
-        // $this->commands([
-        //     InstallSapPackage::class,
-        // ]);
+        $this->commands([
+            InstallSapPackage::class,
+        ]);
 
+        // $this->publishes([
+        //   __DIR__.'/config/sap.php' => config_path('sap.php'),
+        // ],'config');
         $this->publishes([
-          __DIR__.'/config/sap.php' => config_path('sap.php'),
-        ],'config');
+          __DIR__ . '/../config/sap.php' => config_path('sap.php'),
+      ], 'sap');
+
     }
   }
 }
