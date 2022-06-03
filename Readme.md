@@ -24,7 +24,17 @@ You can publish the config using this command:
     php artisan vendor:publish --provider="Protendai\SapBusinessOne\SapBusinessOneServiceProvider"
 ```
  
-The defaults configuration settings are set in `config/sap.php`. You can modify the values.
+The defaults configuration settings are set in `config/sap.php` as shown below and you can modify the values.
+
+``` php
+'sap' => [
+        "https"         => false,
+        "host"          => "IP/HOST Address eg 192.168.1.1",
+        "port"          => 50000,
+        "sslOptions"    => ["cafile" => "path/to/certificate.crt","verify_peer" => true,"verify_peer_name" => true,],
+        "version"       => 1
+    ],
+```
 
 You update config using this command:
 ```shell
