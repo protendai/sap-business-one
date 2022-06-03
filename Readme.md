@@ -1,9 +1,7 @@
 ## SAP Business One Service Layer Wrapper for Laravel
 
 
-## Installation
-
-### Laravel
+### Installation
 
     composer require protendai/sap-business-one
 
