@@ -1,4 +1,4 @@
-## SapBusinessOne Wrapper for Laravel
+## SAP Business One Service Layer Wrapper for Laravel
 
 
 ## Installation
